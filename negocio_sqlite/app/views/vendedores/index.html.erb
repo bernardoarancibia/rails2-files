@@ -1,0 +1,36 @@
+<h1>Listing vendedores</h1>
+
+<table>
+  <tr>
+    <th>Rut</th>
+    <th>Dv</th>
+    <th>Password</th>
+    <th>Administrador</th>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Cod fono</th>
+    <th>Num fono</th>
+    <th>Email</th>
+  </tr>
+
+<% @vendedores.each do |vendedor| %>
+  <tr>
+    <td><%=h vendedor.rut %></td>
+    <td><%=h vendedor.dv %></td>
+    <td><%=h vendedor.password %></td>
+    <td><%=h vendedor.administrador %></td>
+    <td><%=h vendedor.nombre %></td>
+    <td><%=h vendedor.apellidos %></td>
+    <td><%=h vendedor.cod_fono %></td>
+    <td><%=h vendedor.num_fono %></td>
+    <td><%=h vendedor.email %></td>
+    <td><%= link_to 'Show', vendedor %></td>
+    <td><%= link_to 'Edit', edit_vendedor_path(vendedor) %></td>
+    <td><%= link_to 'Destroy', vendedor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New vendedor', new_vendedor_path %>

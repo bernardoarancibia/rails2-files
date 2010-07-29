@@ -1,0 +1,22 @@
+<h1>Note List</h1>
+<%= link_to "New Note", :action => "create" %>
+<br /> <br />
+<table>
+  <th>From</th>
+  <th>Title</th>
+  <th>Date</th>
+  <th>Do</th>
+<% @notes.each do |note| %>
+  <tr>
+  <% name = User.find_by_id(note.user_id).name -%>
+  <td><%= name -%></td>
+  <td><%= note.title -%></td>
+  <td><%= note.updated_at -%></td>
+  <td>
+    <%= link_to "Show", :action => "show", :id => note.id %>
+    <%= link_to "Update", "#" %>
+    <%= link_to "Delete", :action => "destroy", :confirm => "Are you sure?", :id => note.id %>
+  </td>
+  </tr>
+<% end -%>
+</table>

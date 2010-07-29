@@ -1,0 +1,14 @@
+th {
+  background-color: black;
+  color: white;
+}
+
+td {
+  background-color: yellow;
+}
+
+#notice {
+  background-color: yellow;
+  border-style: solid blue;
+  color: green;
+}

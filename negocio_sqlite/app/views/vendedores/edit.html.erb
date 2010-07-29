@@ -1,0 +1,48 @@
+<h1>Editing vendedor</h1>
+
+<% form_for(@vendedor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :rut %><br />
+    <%= f.text_field :rut %>
+  </p>
+  <p>
+    <%= f.label :dv %><br />
+    <%= f.text_field :dv %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </p>
+  <p>
+    <%= f.label :administrador %><br />
+    <%= f.check_box :administrador %>
+  </p>
+  <p>
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </p>
+  <p>
+    <%= f.label :apellidos %><br />
+    <%= f.text_field :apellidos %>
+  </p>
+  <p>
+    <%= f.label :cod_fono %><br />
+    <%= f.text_field :cod_fono %>
+  </p>
+  <p>
+    <%= f.label :num_fono %><br />
+    <%= f.text_field :num_fono %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @vendedor %> |
+<%= link_to 'Back', vendedores_path %>

@@ -1,0 +1,36 @@
+<h1>Listado de Productos</h1>
+
+  <script>
+    $(function(){
+      var data = <%= @productos.map {|p| p.nombre} %> ;
+      $("#buscar").autocomplete(data);
+    });
+  </script>
+
+  <center><p>Buscar: <input id="buscar" /></p><br /></center>
+
+<% if @productos.empty? %>
+  No existen productos para esta categoría.
+<% else %>
+  <table>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Stock</th>
+    <% @productos.each do |producto|%>
+      <tr>
+        <td><%= h producto.nombre.titleize %></td>
+        <td><%= number_to_currency producto.precio %></td>
+        <td><center><%= producto.stock %></center></td>
+        <td id="table_opt"><%= link_to "Editar", [:edit, producto] %></td>
+        <td id="table_opt">
+          <%= link_to "Eliminar", producto,
+            :confirm => "¿Está seguro de eliminar el producto?",
+            :method => :delete %>
+        </td>
+      </tr>
+    <% end -%>
+  </table>
+<% end -%>
+<br />
+<p><%= link_to "Nuevo producto", [:new, :producto] %></p>
+<p><%= link_to "Volver a categorías", :categorias %></p>

@@ -1,0 +1,18 @@
+También es recomendable traducir las plantillas del generador scaffold  
+que se encuentran en 
+{RUBY}\lib\ruby\gems\{VERSION DE RUBY}\gems\rails-{VERSION DE RAILS}\lib\rails_generator\generators\components\scaffold\templates
+
+Crear carpeta app/overrides/
+Dentro de overrides crear archivos:
+- errores.rb
+- date.rb
+- all.rb
+
+Luego colocar, al final de config/enviroments.rb
+require "#{RAILS_ROOT}/app/overrides/all"
+
+Finalmente en el archivo config\initializers\inflections.rb
+Copiar el contenido del archivo inflections proporcionado.
+
+Agregar a cada archivo con caracteres utf8 
+# encoding: utf-8

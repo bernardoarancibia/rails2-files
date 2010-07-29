@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  categoria_id: 1
+  nombre: MyString
+  precio: 1
+  granel: false
+  stock: 1
+
+two:
+  categoria_id: 1
+  nombre: MyString
+  precio: 1
+  granel: false
+  stock: 1

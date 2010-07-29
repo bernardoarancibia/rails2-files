@@ -1,0 +1,29 @@
+
+<h1>Listado de Categorias</h1>
+
+  <% if @categorias.empty? %>
+    No existen categorías ingresadas.
+  <% else %>
+    <table>
+      <th>Nombre</th>
+      <th>#P</th>
+      <% @categorias.each do |categoria|%>
+        <tr>
+          <td>
+            <%= link_to h(categoria.nombre.titleize), 
+              :controller => "productos", :action => "list", :id => categoria.id %>
+          </td>
+          <td>(<%= categoria.productos.length %>)</td>
+          <td id="table_opt"><%= link_to "Editar", [:edit, categoria] %></td>
+          <td id="table_opt">
+            <%= link_to "Eliminar", categoria, 
+              :confirm => "¿Está seguro que desea eliminar la categoría?", 
+              :method => :delete %>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+  <%  end %>
+
+<p><%= link_to "Nueva categoria", [:new, :categoria] %></p>
+<p><%= link_to "Ver todos los productos", :productos %></p>

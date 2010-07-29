@@ -1,0 +1,13 @@
+<p>
+  <b>Vendedor:</b>
+  <%=h @nota.vendedor_id %>
+</p>
+
+<p>
+  <b>Texto:</b>
+  <%=h @nota.texto %>
+</p>
+
+
+<%= link_to 'Edit', edit_nota_path(@nota) %> |
+<%= link_to 'Back', notas_path %>

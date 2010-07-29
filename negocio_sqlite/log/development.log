@@ -1,0 +1,273 @@
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (117.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (77.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateVendedores (20100706053605)
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE TABLE "vendedores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rut" integer NOT NULL, "password" varchar(30) NOT NULL, "administrador" boolean DEFAULT 'f' NOT NULL, "nombre" varchar(30), "apellidos" varchar(30), "cod_fono" integer(1), "num_fono" integer, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100706053605')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("vendedores")[0m
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:09:12) [GET]
+  [4;36;1mVendedor Load (0.9ms)[0m   [0;1mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 102ms (View: 93, DB: 1) | 200 OK [http://localhost/vendedores]
+
+
+Processing VendedoresController#new (for 127.0.0.1 at 2010-07-06 02:09:28) [GET]
+Rendering template within layouts/vendedores
+Rendering vendedores/new
+
+ActionView::TemplateError (undefined method `dv' for #<Vendedor:0xb1c2c10>) on line #12 of app/views/vendedores/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :dv %><br />
+12:     <%= f.text_field :dv %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :password %><br />
+
+    app/views/vendedores/new.html.erb:12:in `block in _run_erb_app47views47vendedores47new46html46erb'
+    app/views/vendedores/new.html.erb:3
+    app/controllers/vendedores_controller.rb:29:in `new'
+    <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (251.7ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VendedoresController#new (for 127.0.0.1 at 2010-07-06 02:10:03) [GET]
+Rendering template within layouts/vendedores
+Rendering vendedores/new
+
+ActionView::TemplateError (undefined method `dv' for #<Vendedor:0xb5f3c54>) on line #12 of app/views/vendedores/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :dv %><br />
+12:     <%= f.text_field :dv %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :password %><br />
+
+    app/views/vendedores/new.html.erb:12:in `block in _run_erb_app47views47vendedores47new46html46erb'
+    app/views/vendedores/new.html.erb:3
+    app/controllers/vendedores_controller.rb:29:in `new'
+    <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (183.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:10:07) [GET]
+  [4;35;1mVendedor Load (0.7ms)[0m   [0mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 12ms (View: 3, DB: 1) | 200 OK [http://localhost/vendedores]
+
+
+Processing VendedoresController#new (for 127.0.0.1 at 2010-07-06 02:10:09) [GET]
+Rendering template within layouts/vendedores
+Rendering vendedores/new
+
+ActionView::TemplateError (undefined method `dv' for #<Vendedor:0xbaef2f8>) on line #12 of app/views/vendedores/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :dv %><br />
+12:     <%= f.text_field :dv %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :password %><br />
+
+    app/views/vendedores/new.html.erb:12:in `block in _run_erb_app47views47vendedores47new46html46erb'
+    app/views/vendedores/new.html.erb:3
+    app/controllers/vendedores_controller.rb:29:in `new'
+    <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (190.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "vendedores" already exists: CREATE TABLE "vendedores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rut" integer NOT NULL, "password" varchar(30) NOT NULL, "administrador" boolean DEFAULT 'f', "nombre" varchar(30), "apellidos" varchar(30), "cod_fono" integer, "num_fono" integer, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (325.4ms)[0m   [0mCREATE TABLE "vendedores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rut" integer NOT NULL, "password" varchar(30) NOT NULL, "administrador" boolean DEFAULT 'f', "nombre" varchar(30), "apellidos" varchar(30), "cod_fono" integer, "num_fono" integer, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:13:48) [GET]
+  [4;36;1mVendedor Load (0.9ms)[0m   [0;1mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 54ms (View: 45, DB: 1) | 200 OK [http://localhost/vendedores]
+
+
+Processing VendedoresController#new (for 127.0.0.1 at 2010-07-06 02:13:50) [GET]
+Rendering template within layouts/vendedores
+Rendering vendedores/new
+
+ActionView::TemplateError (undefined method `dv' for #<Vendedor:0xb75e930>) on line #12 of app/views/vendedores/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :dv %><br />
+12:     <%= f.text_field :dv %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :password %><br />
+
+    app/views/vendedores/new.html.erb:12:in `block in _run_erb_app47views47vendedores47new46html46erb'
+    app/views/vendedores/new.html.erb:3
+    app/controllers/vendedores_controller.rb:29:in `new'
+    <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (187.8ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (135.6ms)[0m   [0mCREATE TABLE "vendedores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rut" integer NOT NULL, "dv" varchar(1) NOT NULL, "password" varchar(30) NOT NULL, "administrador" boolean DEFAULT 'f', "nombre" varchar(30), "apellidos" varchar(30), "cod_fono" integer, "num_fono" integer, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:16:50) [GET]
+  [4;35;1mVendedor Load (0.9ms)[0m   [0mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/vendedores]
+
+
+Processing VendedoresController#new (for 127.0.0.1 at 2010-07-06 02:16:51) [GET]
+Rendering template within layouts/vendedores
+Rendering vendedores/new
+Completed in 34ms (View: 23, DB: 0) | 200 OK [http://localhost/vendedores/new]
+
+
+Processing VendedoresController#create (for 127.0.0.1 at 2010-07-06 02:17:42) [POST]
+  Parameters: {"authenticity_token"=>"cjzWHDTmB7FRrX9u16P/EMOOwLEl8PLNoeq+FPgvUg8=", "vendedor"=>{"rut"=>"16502805", "dv"=>"8", "password"=>"postgres", "administrador"=>"1", "nombre"=>"Bernardo", "apellidos"=>"Arancibia Araos", "cod_fono"=>"09", "num_fono"=>"86014468", "email"=>"bernardo@kde.cl"}, "commit"=>"Create"}
+  [4;36;1mVendedor Create (0.8ms)[0m   [0;1mINSERT INTO "vendedores" ("rut", "dv", "password", "administrador", "nombre", "apellidos", "cod_fono", "num_fono", "email", "created_at", "updated_at") VALUES(16502805, '8', 'postgres', 't', 'Bernardo', 'Arancibia Araos', 9, 86014468, 'bernardo@kde.cl', '2010-07-06 06:17:42', '2010-07-06 06:17:42')[0m
+Redirected to http://localhost:3000/vendedores/1
+Completed in 126ms (DB: 1) | 302 Found [http://localhost/vendedores]
+
+
+Processing VendedoresController#show (for 127.0.0.1 at 2010-07-06 02:17:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mVendedor Load (0.5ms)[0m   [0mSELECT * FROM "vendedores" WHERE ("vendedores"."id" = 1) [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/show
+Completed in 39ms (View: 27, DB: 1) | 200 OK [http://localhost/vendedores/1]
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:17:57) [GET]
+  [4;36;1mVendedor Load (1.2ms)[0m   [0;1mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://localhost/vendedores]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (114.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (103.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateVendedores (20100706053605)
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: table "vendedores" already exists: CREATE TABLE "vendedores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rut" integer NOT NULL, "dv" varchar(1) NOT NULL, "password" varchar(30) NOT NULL, "administrador" boolean DEFAULT 'f', "nombre" varchar(30), "apellidos" varchar(30), "cod_fono" integer, "num_fono" integer, "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-06 02:21:46) [GET]
+  [4;35;1mVendedor Load (2.0ms)[0m   [0mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 44ms (View: 18, DB: 2) | 200 OK [http://localhost/vendedores]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (129.3ms)[0m   [0mCREATE TABLE "notas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "vendedor_id" integer, "texto" text, "created_at" datetime, "updated_at" datetime) [0m
+
+
+Processing NotasController#index (for 127.0.0.1 at 2010-07-06 02:23:10) [GET]
+  [4;36;1mNota Load (0.7ms)[0m   [0;1mSELECT * FROM "notas" [0m
+Rendering template within layouts/notas
+Rendering notas/index
+Completed in 130ms (View: 40, DB: 1) | 200 OK [http://localhost/notas]
+
+
+Processing NotasController#new (for 127.0.0.1 at 2010-07-06 02:23:12) [GET]
+Rendering template within layouts/notas
+Rendering notas/new
+Completed in 94ms (View: 84, DB: 0) | 200 OK [http://localhost/notas/new]
+
+
+Processing NotasController#new (for 127.0.0.1 at 2010-07-06 02:24:42) [GET]
+Rendering template within layouts/notas
+Rendering notas/new
+Completed in 42ms (View: 31, DB: 0) | 200 OK [http://localhost/notas/new]
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-13 18:37:22) [GET]
+  [4;36;1mVendedor Load (24.9ms)[0m   [0;1mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 418ms (View: 217, DB: 25) | 200 OK [http://0.0.0.0/vendedores]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 18:37:36) [GET]
+
+ActionController::RoutingError (No route matches "/productos" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-13 18:37:43) [GET]
+
+ActionController::RoutingError (No route matches "/categorias" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing NotasController#index (for 127.0.0.1 at 2010-07-13 18:38:03) [GET]
+  [4;35;1mNota Load (0.7ms)[0m   [0mSELECT * FROM "notas" [0m
+Rendering template within layouts/notas
+Rendering notas/index
+Completed in 98ms (View: 41, DB: 1) | 200 OK [http://0.0.0.0/notas]
+
+
+Processing NotasController#new (for 127.0.0.1 at 2010-07-13 18:38:06) [GET]
+Rendering template within layouts/notas
+Rendering notas/new
+Completed in 40ms (View: 30, DB: 0) | 200 OK [http://0.0.0.0/notas/new]
+
+
+Processing NotasController#index (for 127.0.0.1 at 2010-07-13 18:38:09) [GET]
+  [4;36;1mNota Load (0.7ms)[0m   [0;1mSELECT * FROM "notas" [0m
+Rendering template within layouts/notas
+Rendering notas/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/notas]
+
+
+Processing VendedoresController#index (for 127.0.0.1 at 2010-07-13 18:38:13) [GET]
+  [4;35;1mVendedor Load (1.1ms)[0m   [0mSELECT * FROM "vendedores" [0m
+Rendering template within layouts/vendedores
+Rendering vendedores/index
+Completed in 27ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/vendedores]

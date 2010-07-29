@@ -1,0 +1,9 @@
+= Rails 2 Spannish Locales and Examples
+
+== Rails Locales
+
+* Move i18n/rails/locale/es.yml into your locale Rails project locales
+
+== Rails Spannish Pluralization
+
+* rails_spannish_pluralization/README

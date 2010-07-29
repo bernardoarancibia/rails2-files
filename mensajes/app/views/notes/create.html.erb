@@ -1,0 +1,19 @@
+<h1>Creating new note</h1>
+
+<% form_tag :action => "create" do -%>
+  <p>
+    User id: 
+    <%= text_field "note", "user_id", :size => 2%>
+  </p>
+  <p>
+    Title <br />
+    <%= text_field "note", "title", :size => 40%>
+  </p>
+  <p>
+    Body <br />
+    <%= text_area "note", "body", :size => 40%>
+  </p>
+  <%= submit_tag "Create" %>
+<% end -%>
+<br />
+<%= link_to "Back", :action => "list" %>
