@@ -4,6 +4,7 @@ class ProductosController < ApplicationController
   before_filter :find_categorias, :only => ["new", "edit"]
 
   def index
+    @title = "Listado de Productos"
     @productos = Producto.find(:all, :order => "nombre ASC")
 
     respond_to do |format|
@@ -12,19 +13,21 @@ class ProductosController < ApplicationController
     end
   end
 
-  def list 
+  def list
+    @title = "Listado de Productos"
     @categoria = Categoria.find_by_id(params[:id])
     @productos = @categoria.productos
     render "index"
   end
 
   def new
+    @title = "Nuevo Producto"
     @producto = Producto.new
   end
 
   def create
     @producto = Producto.new(params[:producto])
-    
+
     if @producto.save
       redirect_to productos_path, :notice => "El producto se creó correctamente"
     else
@@ -32,16 +35,17 @@ class ProductosController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
+    @title = "Editando Producto"
     @producto = Producto.find_by_id(params[:id])
   end
 
   def update
-    @producto = Producto.find_by_id(params[:id])    
+    @producto = Producto.find_by_id(params[:id])
 
     if @producto.update_attributes(params[:producto])
       redirect_to productos_path, :notice => "El producto se actualizó de forma correcta"
-    else 
+    else
       render "new"
     end
   end

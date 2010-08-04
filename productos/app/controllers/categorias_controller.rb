@@ -1,37 +1,40 @@
-#encoding : utf-8 
+#encoding : utf-8
 class CategoriasController < ApplicationController
   before_filter :find_categoria, :only => [:edit, :update, :destroy]
 
   def index
-   @categorias = Categoria.find(:all, :order => "nombre ASC") 
+    @title = "Listado de Categorías"
+    @categorias = Categoria.find(:all, :order => "nombre ASC")
 
-   respond_to do |format|
-     format.html {render :index}
-     format.xml  {render :xml => @categorias}
-   end
+    respond_to do |format|
+      format.html {render :index}
+      format.xml  {render :xml => @categorias}
+    end
   end
 
   def new
-    @categoria = Categoria.new    
+    @title = "Nueva Categoría"
+    @categoria = Categoria.new
   end
 
   def create
     @categoria = Categoria.new(params[:categoria])
     if @categoria.save
       redirect_to categorias_path, :notice => "La categoría se creó correctamente"
-    else 
+    else
       render "new"
     end
   end
 
   def edit
+    @title = "Editando Categoría"
   end
 
-  def update 
+  def update
 
     if @categoria.update_attributes(params[:categoria])
       redirect_to categorias_path, :notice => "La categoría se actualizó correctamente"
-    else 
+    else
       render "edit"
     end
   end

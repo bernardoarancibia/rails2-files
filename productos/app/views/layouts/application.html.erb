@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title>Page title X</title>
+    <%= yield :head %>
     <%= stylesheet_link_tag "application" -%>
 
     <%= javascript_include_tag "jquery-latest" -%>
@@ -38,7 +39,7 @@
         <li>Paginar (pagination with AJAX, railscasts)</li>
         <li>XML o JSON</li>
         <li>
-          Analizar relaciones de dependencia, si elimino una categoria debería eliminar también 
+          Analizar relaciones de dependencia, si elimino una categoria debería eliminar también
           los productos asociados?
         </li>
       </ul>
