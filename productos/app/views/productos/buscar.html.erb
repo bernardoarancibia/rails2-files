@@ -1,0 +1,14 @@
+<% if @producto %>
+  <h1><%= "\"" +  @producto.nombre.capitalize + "\"" %></h1>
+  <h3>Precio: <%= number_to_currency @producto.precio %></h3>
+  <h3>Stock: <%= @producto.stock %></h3>
+  <%= image_tag @producto.foto.url(:small) if @producto.foto_file_name %>
+  <p>
+    <%= link_to "Editar", [:edit, @producto] %>
+    <%= link_to "Eliminar", "#" %>
+  </p>
+<% else %>
+  <p>No existe el producto</p>
+  <br />
+<% end -%>
+<p><%= link_to "Volver a productos", :productos %></p>

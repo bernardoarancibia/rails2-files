@@ -1,25 +1,30 @@
-<% form_for @producto do |f| %>
+<% form_for @producto, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :nombre %><br /> 
-    <%= f.text_field :nombre %>  
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
   </p>
   <p>
     Categoría<br />
-    <%# f.select :categoria_id, Categoria.all.collect {|categoria| [categoria.nombre, categoria.id]}, {:include_blank => false} %>  
+    <%# f.select :categoria_id, Categoria.all.collect {|categoria| [categoria.nombre, categoria.id]}, {:include_blank => false} %>
     <%= f.collection_select :categoria_id, @categorias, :id, :nombre %>
   </p>
   <p>
-    <%= f.label :precio %><br /> 
-    $<%= f.text_field :precio, :size => 7 %>  
+    <%= f.label :precio %><br />
+    $<%= f.text_field :precio, :size => 7 %>
   </p>
   <p>
-    <%= f.label :granel %> 
-    <%= f.check_box :granel %>  
+    <%= f.label :granel %>
+    <%= f.check_box :granel %>
   </p>
   <p>
-    <%= f.label :stock %><br /> 
-    <%= f.text_field :stock, :size => 7 %>  
+    <%= f.label :stock %><br />
+    <%= f.text_field :stock, :size => 7 %>
+  </p>
+  <p>
+    <%= f.label :foto -%><br />
+    <%= image_tag @producto.foto.url(:small) if @producto.foto_file_name -%><br />
+    <%= f.file_field :foto  -%>
   </p>
   <p><%= f.submit "Enviar" %></p>
 <% end -%>

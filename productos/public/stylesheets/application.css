@@ -10,17 +10,28 @@ a img {
 
 a {
   color: #0000FF;
+  text-decoration: none;
 }
+a:hover {
+  background-color: yellow;
+ }
 
-/*Por ahora, depsues crear id para cada tipo de 
-  tabla! */
-th {
-  background-color: black;
-  color: white;
+ th {
+   background-color: black;
+   color: white;
 }
 
 td {
   background-color: #E7E9FF;
+}
+
+input {
+  border: solid black 1px;
+}
+
+select {
+  border: solid black 1px;
+  background-color: white;
 }
 
 #table_opt {

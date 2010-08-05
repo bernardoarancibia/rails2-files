@@ -13,7 +13,11 @@
   </head>
   <body>
     <div id="container">
-      <%= Time.now.strftime "%x" %>
+    <div id="menu">
+      <%= link_to "Categorías", :categorias %> |
+      <%= link_to "Productos", :productos %> |
+      <%= link_to "Logout", "#" %>
+    </div>
       <% if flash[:notice] %>
         <div id = "flash_notice">
           <%= flash[:notice] %>

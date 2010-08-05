@@ -56,6 +56,10 @@ class ProductosController < ApplicationController
     redirect_to productos_path, :notice => "El producto ha sido eliminado correctamente"
   end
 
+  def buscar
+    @producto = Producto.find_by_nombre(params[:buscar])
+  end
+
   protected #----------------
 
   def find_categorias

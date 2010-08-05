@@ -9,20 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100726003608) do
+ActiveRecord::Schema.define(:version => 20100805043952) do
 
   create_table "categorias", :force => true do |t|
     t.string "nombre", :limit => 50, :null => false
   end
 
   create_table "productos", :force => true do |t|
-    t.integer  "categoria_id",                                  :null => false
-    t.string   "nombre",       :limit => 50,                    :null => false
-    t.integer  "precio",                                        :null => false
-    t.boolean  "granel",                     :default => false, :null => false
-    t.integer  "stock",                                         :null => false
+    t.integer  "categoria_id",                                    :null => false
+    t.string   "nombre",         :limit => 50,                    :null => false
+    t.integer  "precio",                                          :null => false
+    t.boolean  "granel",                       :default => false, :null => false
+    t.integer  "stock",                                           :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "foto_file_name"
   end
 
   add_index "productos", ["categoria_id"], :name => "index_productos_on_categoria_id"
